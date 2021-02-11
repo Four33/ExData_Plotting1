@@ -123,6 +123,23 @@ with(power2, {
 
 
 ### Plot 3
+power <- read.csv("household_power_consumption.txt", header=TRUE, sep=';', 
+                  na.strings="?", quote='\"')
+
+power3 <- subset(power, Date %in% c("1/2/2007","2/2/2007"))
+power3$Date <- as.Date(power3$Date, format="%d/%m/%Y")
+datetime <- paste(as.Date(power3$Date), power3$Time)
+power3$datetime <- as.POSIXct(datetime)
+
+with(power3, {
+  plot(Sub_metering_1~datetime, type="l",
+       ylab="Global Active Power (kilowatts)", xlab="")
+  lines(Sub_metering_2~datetime,col='Red')
+  lines(Sub_metering_3~datetime,col='Blue')
+})  
+legend("topright", col=c("black", "red", "blue"), lty=1, lwd=2, 
+       legend=c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"))
+
 
 ![plot of chunk unnamed-chunk-4](figure/unnamed-chunk-4.png) 
 
