@@ -103,10 +103,21 @@ hist(power$Global_active_power, main="Global Active Power",
      xlab="Global Active Power (kilowatts)", ylab="Frequency", col="Red")
      
 
-
-
-
 ### Plot 2
+power <- read.csv("household_power_consumption.txt", header=TRUE, sep=';', 
+                  na.strings="?", quote='\"')
+
+power2 <- subset(power, Date %in% c("1/2/2007","2/2/2007"))
+power2$Date <- as.Date(power2$Date, format="%d/%m/%Y")
+datetime <- paste(as.Date(power2$Date), power2$Time) 
+power2$Datetime <- as.POSIXct(datetime)
+
+with(power2, {
+  plot(Global_active_power~Datetime, type="l",
+       ylab="Global Active Power (kilowatts)", xlab="")
+})
+
+
 
 ![plot of chunk unnamed-chunk-3](figure/unnamed-chunk-3.png) 
 
