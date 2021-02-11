@@ -93,9 +93,17 @@ The four plots that you will need to construct are shown below.
 
 
 ### Plot 1
+##plot1
+power <- read.csv("household_power_consumption.txt", header=TRUE, sep=';', 
+                  na.strings="?", quote='\"')
+
+power1 <- subset(power, Date %in% c("1/2/2007","2/2/2007"))
+power$Date <- as.Date(power$Date, format="%d/%m/%Y")
+hist(power$Global_active_power, main="Global Active Power", 
+     xlab="Global Active Power (kilowatts)", ylab="Frequency", col="Red")
+     
 
 
-![plot of chunk unnamed-chunk-2](figure/unnamed-chunk-2.png) 
 
 
 ### Plot 2
