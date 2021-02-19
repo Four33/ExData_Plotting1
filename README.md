@@ -145,8 +145,8 @@ power4$datetime <- as.POSIXct(datetime)
 
 par(mfrow=c(2,2))
 with(power4, {
-  lines(submet_2~datetime,col='Red')
-  lines(submet_3~datetime,col='Blue')
+  lines(submet_datetime,col='Red')
+  lines(submet_datetime,col='Blue')
   legend("topright", col=c("black", "red", "blue"), lty=1, lwd=2, bty="n",
          legend=c("submet_1", "submet_2", "submet_3"))
   plot(Global_reactive_power~datetime, type="l", 
