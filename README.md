@@ -117,11 +117,6 @@ with(power2, {
        ylab="Global Active Power (kilowatts)", xlab="")
 })
 
-
-
-![plot of chunk unnamed-chunk-3](figure/unnamed-chunk-3.png) 
-
-
 ### Plot 3
 power <- read.csv("household_power_consumption.txt", header=TRUE, sep=';', 
                   na.strings="?", quote='\"')
@@ -141,10 +136,7 @@ legend("topright", col=c("black", "red", "blue"), lty=1, lwd=2,
        legend=c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"))
 
 
-![plot of chunk unnamed-chunk-4](figure/unnamed-chunk-4.png) 
-
-
 ### Plot 4
 
-![plot of chunk unnamed-chunk-5](figure/unnamed-chunk-5.png) 
+
 
