@@ -127,8 +127,7 @@ datetime <- paste(as.Date(power3$Date), power3$Time)
 power3$datetime <- as.POSIXct(datetime)
 
 with(power3, {
-  plot(Sub_metering_1~datetime, type="l",
-       ylab="Global Active Power (kilowatts)", xlab="")
+  plot
   lines(Sub_metering_2~datetime,col='Red')
   lines(Sub_metering_3~datetime,col='Blue')
 })  
