@@ -128,8 +128,7 @@ power3$datetime <- as.POSIXct(datetime)
 
 with(power3, {
   plot
-  lines(Sub_metering_2~datetime,col='Red')
-  lines(Sub_metering_3~datetime,col='Blue')
+    lines(submet_3~datetime,col='Blue')
 })  
 legend("topright", col=c("black", "red", "blue"), lty=1, lwd=2, 
        legend=c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"))
