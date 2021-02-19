@@ -146,6 +146,7 @@ power4$datetime <- as.POSIXct(datetime)
 
 par(mfrow=c(2,2))
 with(power4, {
+  
   plot(Global_active_power~datetime, type="l", 
        ylab="Global Active Power", xlab="")
   plot(Voltage~datetime, type="l", 
