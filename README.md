@@ -146,14 +146,10 @@ power4$datetime <- as.POSIXct(datetime)
 
 par(mfrow=c(2,2))
 with(power4, {
-  
-  plot(Global_active_power~datetime, type="l", ylab="Global Active Power", xlab="")
-  plot(Voltage~datetime, type="l", ylab="Voltage", xlab="")
-  plot(Sub_metering_1~datetime, type="l", ylab="Energy sub metering", xlab="")
-  lines(Sub_metering_2~datetime,col='Red')
-  lines(Sub_metering_3~datetime,col='Blue')
+  lines(submet_2~datetime,col='Red')
+  lines(submet_3~datetime,col='Blue')
   legend("topright", col=c("black", "red", "blue"), lty=1, lwd=2, bty="n",
-         legend=c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"))
+         legend=c("submet_1", "submet_2", "submet_3"))
   plot(Global_reactive_power~datetime, type="l", 
        ylab="Global_Rective_Power",xlab="")
 })
